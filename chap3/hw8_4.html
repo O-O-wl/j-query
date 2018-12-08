@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+<title>hw8_4</title>
+</head>
+
+<body>
+
+    <script>
+        //hw8_4
+        //201331024
+        //이동영
+        function Book(title,price,year,author){
+            this.title=title;
+            this.price=price;
+            this.year=year;
+            this.author=author;
+        }
+        
+        Book.prototype.toString=function(){
+           var output=""
+           for(key in this)
+                {
+                    output+=key+"\t:\t"+this[key]+"\n"
+                }
+          alert(output);
+        }
+        //생성자 함수 작성
+            var myBook = new Book("java", 25000, 2014, "정우성");
+            var yourBook = new Book("database", 20000, 2013, "장동건");
+            var ourBook = new Book("computer", 30000, 2009, "강동원");
+            var books=[]
+            books.push(myBook);
+            books.push(yourBook);
+            books.push(ourBook);
+            
+
+        function Books(books){
+         this.books=books
+
+        }
+
+        Books.prototype.showList=function(){
+        return this.books.sort(function(left,right){
+            return right=left;
+        }).slice(0,2)}
+
+        var myBooks=new Books(books);
+        myBooks.showList();
+        
+            
+        
+      
+
+        
+            
+        
+    </script>
+
+</body>
+
+</html>

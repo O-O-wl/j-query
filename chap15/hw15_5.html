@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+       
+    </script>
+    <script>
+        //201331024
+        //이동영
+        //hw15_5
+        
+        $(document).ready(function () {  
+            $('#m > li').each(function(index){
+                alert("1")   //id 가  m 인 태그의 자식인 li태그 에 대하여 each 메소드에 콜백 메소드 를 등록
+                $(this).html("리스트"+(index+1)); // 각각의 태그의 innerHTML을 리스트 인덱스+1 로 변환
+           })
+        })
+    </script>
+</head>
+
+<body>
+    <ul id="m">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+    </ul>
+
+    <ul id="n">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+    </ul>
+</body>
+
+</html>

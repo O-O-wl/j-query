@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>hw16_1</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+
+    </script>
+    <script>
+        //201331024
+        //이동영
+        //hw16_1
+        $(document).ready(function () {
+                $('#btn1').click(function(){  // id가 btn1인 태그객체에 click리스너를 달아줌 
+                    $('p').css('background','yellow'); //p태그에 이벤트핸들러메소드로 배경색을 yellow로 바꾸게 작성 
+                }
+                )
+                $('#btn2').dblclick(function(){ // id가 btn2인 태그객체에 click리스너를 달아줌
+                    $('p').css('background','purple'); //p태그에 이벤트핸들러메소드로 배경색을 purple로 바꾸게 작성 
+                })
+        })
+
+
+
+    </script>
+</head>
+
+<body>
+    <button id="btn1">click</button>
+    <button id="btn2">dblclick</button>
+    <p>내용</p>
+</body>
+
+</html>

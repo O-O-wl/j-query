@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+<title>hw8_2</title>
+</head>
+
+<body>
+
+    <script>
+        //hw8_2
+        //201331024
+        //이동영
+
+        var input=prompt("");   //입력받은 문장
+        var length=input.length; //문장의 길이
+        var modified=input.toLowerCase(); //입력받은 값을 일단 소문자로 변경해준다.
+        var countA=0;   //A,a의 개수
+       
+
+        while(modified.match('a')){ //소문자로 변경된 문장에 'a'가 있으면 반복문 실행
+            countA+=1;      //a의 개수를 나타내는 변수에 ++
+            modified=modified.replace('a','*'); // a를 A로 수정후 기존 문장을 대치
+        }
+        //a가 *로 다 대치되면 비로소 while문에 걸리지 않음
+        var output="문장 = "+input+"\n길이 = "+length+"\na 또는 A의 개수 = "+countA+"\n"+modified;
+
+       alert(output);
+    </script>
+
+</body>
+
+</html>

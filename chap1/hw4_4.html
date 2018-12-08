@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>피타고라스의 정리</title>
+
+    <script>
+        // 201331024 
+        //  이동영
+
+        var count=0;
+        var Max=100;   
+        var output="";
+
+        for(var a=1;a<=Max;a++){
+           for( var b=1; b<=Max;b++){
+                for(var c =1; c<=Max ; c++){
+                           
+                        if(a**2+b**2==c**2){
+                            count++;
+                            output+=a+"/"+b+"/"+c+" "; //피타고라스에 만족하는 항목을 문자열에 추가 
+                            if((count%5==0)&&(count>1))
+                                {
+                                output+="\n";
+                                }  // 카운트를 5로 나눈 몫이 0이면 줄바꿈 (이중 if문)
+                            }
+                    }
+                }
+            }
+
+            alert(output+"\n \n 직각 삼각형 수 : "+count);
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+<title>hw8_4</title>
+</head>
+
+<body>
+
+    <script>
+        //hw8_4
+        //201331024
+        //이동영
+        function Book(title,price,year,author){
+            this.title=title;
+            this.price=price;
+            this.year=year;
+            this.author=author;
+        }
+        //생성자 함수 작성
+
+
+            var myBook = new Book("java", 25000, 2014, "정우성");
+            var yourBook = new Book("database", 20000, 2013, "장동건");
+            var ourBook = new Book("computer", 30000, 2009, "강동원");
+            //객체 생성자함수를 이용하여 객체생성
+            
+            var books=[myBook,yourBook,ourBook]
+            // 객체를 저장하는 배열선언
+            Book.prototype.toString=function(){
+                var output=""
+                for(var key in this){
+                    // 객체의 속성과 값을 보여준다, 함수타입의 멤버는 제외한체로 보여준다.
+                    if(typeof(this[key])!='function'){
+                       output+=key+"\t:\t"+this[key]+"\n";
+                    }
+                }
+            return output;
+            }
+            
+           
+            for(var book in books.sort(function(left,right){return right.price-left.price}).slice(0,2)){
+                document.write(books[book]+"<br>");
+            }
+
+        
+            
+        
+    </script>
+
+</body>
+
+</html>

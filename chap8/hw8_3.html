@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>hw8_3</title>
+</head>
+    <body>
+
+    <script>
+        //hw8_3
+        //201331024
+        //이동영
+       
+        //Email의 생성자 함수
+        function Email(email){
+            this.email=email; //입력받은 이메일 
+            this.chunks = this.email.split('.');  //이메일을 .으로 나눈 배열
+
+        }
+
+
+
+
+    // Email 의 프로토타입 메소드 이메일형식인지 확인해주는 메소드 
+    Email.prototype.confirmEmail=function(){
+        if( (this.email.match('@') )&&
+        // @를 포함하고 
+        (( (this.chunks.length==3&&this.chunks[2]=="kr")
+        &&(this.chunks[1]=='go'||this.chunks[1]=='or'||this.chunks[1]=='co'))
+        // 만약 '.'으로 잘려진 덩어리가 3개이면 3번쨰는 'kr' 두번째는  'go' ,'or' ,'co' 중에 하나이거나
+     ||((this.chunks.length==2)&&(this.chunks[1]=='com'||this.chunks[1]=='net')))){
+        //만약 '.'으로 잘려진 덩어리가 2개이면 2번쨰는 'com','net'하나이면 이메일 출력
+            document.write(this.email);
+        }
+        else{
+            alert("경고!이메일 형식이 잘못되었습니다.")
+            //위의 조건이 아닐시 경고창 출력
+        }
+    }
+    var inputEmail=prompt('이메일 주소를 입력해 주세요', 'name@naver.co.kr');
+    // 이메일 입력받기
+    var email= new Email(inputEmail);
+    //입력받은 이메일로 객체생성
+    email.confirmEmail();
+    //이메일 형식인지 확인하는 메소드 호출
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>hw16_3</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+   <script>
+        //201331024
+        //이동영
+        //hw16_3
+        $(document).ready(function () { 
+            $('html').mousemove(function(event){   //html 객체에 mousemove이벤트 리스너를 달아줍니다 
+                var position=$(this).offset();    
+                var x = event.pageX-position.left;  //이벤트객체의 pageX를 이용해 x좌표를 구합니다 
+                var y = event.pageY-position.top;  //이벤트객체의 pageY를 이용해 y좌표를 구합니다 
+                $('p').html("x:"+x+",y:"+y)}   //p태그를 셀렉터로 선택하여 innerHTML을 지정해줍니다.
+            )
+        })
+    </script> 
+</head>
+
+<body>
+     <p></p>
+</body>
+
+</html>

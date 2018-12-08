@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    
+    <script>
+        //hw8_1
+        //201331024
+        //이동영
+        var num1=3.456789;
+        var num2=700000;
+        var num3="30.5px";
+        alert(num2.toExponential());  //Number 객체의 지수변환함수 적용
+        alert(num1.toFixed(2));       // Number 객체의 소수점 고정함수 적용
+        alert(num1.toPrecision(2));   // Number 객체의 유효한수 , 반올림 적용
+        alert(Number.parseInt(num3.slice(0,-2))+40);  //문자열에서 슬라이스로 숫자부분만 추출후 Int형으로 parsing 후 40을 더해 출력
+        alert(Number.parseFloat(num3.slice(0,-2))+40);//문자열에서 슬라이스로 숫자부분만 추출후 float형으로 parsing 후 40을 더해 출력
+
+
+
+    </script>
+
+</body>
+
+</html>

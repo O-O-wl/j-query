@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>생년월일 출력하기</title>
+
+
+    <script>
+
+        //201331024
+        // 이동영
+        
+        var frontIdNumber = prompt("주민번호 앞자리를 입력하세요","앞자리");
+        var backIdNumber = prompt("주민번호 뒷자리를 입력하세요","뒷자리");
+        
+        var year =frontIdNumber-(frontIdNumber%10000);
+        //6자리이니 10000의 나머지를 뺌 --년도*10000의 형태로 저장
+        var month = frontIdNumber-year-((frontIdNumber-year)%100);
+        //주민번호 앞자리에서 year를 빼서  월과 일의 형태로 바꿔준뒤 100으로 나눈 나머지를 빼서 월*100의 꼴로 바꿔준다
+        var day= frontIdNumber-year-month;
+        // 년월일에서 년 월을 빼준다
+        
+        year=(backIdNumber/1000000)>=3?((year/10000)>10?"20"+year/10000:"200"+year/10000):"19"+year/10000;
+        //이중 삼항연산자를 이용한다. 10000으로 나눠주었을때 10보다 작으면 문자열 "20"을 더하면 201~9꼴이 나올수 있으므로 삼항연산자를 한번 더 해준다.
+        month=month/100;
+        //100이곱해진 형태이므로 나눠준다
+        
+
+        alert(year+"\n"+month+"\n"+day);
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

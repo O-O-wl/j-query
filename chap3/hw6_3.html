@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>hw6_3</title>
+</head>
+
+<body>
+    <script>
+        //  hw6_3
+        //  201331024
+        //  이동영
+        var book = {
+            title: "유니티교과서",
+            price: 28000,
+            year: 2018
+        }
+        //  객체와 속성의 키와 값 지정
+
+        book.author = "기타무라 마나미";
+        //  객체 선언후 동적으로 속성과 값 추가
+
+        //toString 속성에 무명메서드 저장
+        book.toString=function(){
+            var output=""
+            //해당 자기객체를 가르키는 this 키워드를 사용한다.
+            for(var key in this){
+                if(key!='toString'){
+                    output+=key+"\t:\t"+this[key]+"\n"
+                }
+
+            }
+            return output;
+        }
+            //alert함수에 toString메소드를 호출한다.
+        alert(book.toString());
+    </script>
+
+
+</body>
+
+</html>

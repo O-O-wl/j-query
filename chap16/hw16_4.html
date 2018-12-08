@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>hw16_4</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+
+    </script>
+    <script>
+        //201331024
+        //이동영
+        //hw16_4
+        $(document).ready(function (){
+          $("#rel_site").change(function() {  //셀렉박스가 변할시 
+            $('#txt').html($(this).children("option:selected").val()); //txt태그의 innerHTML을 option태그의 선택된객체의 value으로 한다.
+            });
+         })
+
+        
+    </script>
+</head>
+
+<body>
+    <select id="rel_site">
+        <option value="">사이트 선택</option>
+        <option value="www.naver.com">네이버</option>
+        <option value="www.nate.com">네이트</option>
+        <option value="www.daum.net">다음</option>
+    </select>
+    <p id="txt"></p>
+</body>
+
+</html>
+
+

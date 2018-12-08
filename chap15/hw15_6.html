@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+        
+        </script>
+    <script>
+        //201331024
+        //이동영
+        //hw15_6
+       $(document).ready(function(){
+          $('#myList').before('<li>새내용 추가1</li>')  // li 태그를 myList노드 앞에 추가
+          $('#myList').after($('#myList').clone())  // myList아이디를 셀렉터로 선택하여 , 클론메소드반환된 값을 after메소드로 노드뒤에 추가
+
+       })
+    </script>
+</head>
+<body>
+    <ul>
+        <li id="myList">내용</li>
+    </ul>
+</body>
+</html>

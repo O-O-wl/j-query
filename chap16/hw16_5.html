@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>hw16_5</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+
+    </script>
+    <script>
+        //201331024
+        //이동영
+        //hw16_5
+        // 교수님 기본글씨크기가 16지만 0누르면 12로 되게끔 하였습니다.
+        $(document).ready(function () {
+
+            var fontsize = parseInt($('#txt_wrap').css('font-size').slice(0, -2))
+            // 폰트사이즈를 저장할 변수 생성
+            $('.zoom  button').each(function (index) {
+                if (index == 0) { //첫번째 버튼
+                    $(this).click(function () {
+                        ++fontsize ////폰트크기변수 를 1증가 
+                        $('#txt_wrap').css('font-size', (fontsize) + 'px'); //태그객체에 적용
+                    })
+                } else if (index == 1) { //두번째버튼 
+                    $(this).click(function () {
+                        fontsize = 12 //폰트크기변수 를 12로 고정
+                        $('#txt_wrap').css('font-size', fontsize + 'px'); //태그객체에 적용
+                    })
+                } else if (index == 2) { //세번째버튼
+                    $(this).click(function () {
+                        --fontsize //폰트크기변수 를 1감소
+                        $('#txt_wrap').css('font-size', fontsize + 'px'); //태그객체에 적용
+                    })
+                }
+            })
+            $('select').change(function () {
+                $('#txt_wrap').css('color', $(this).children("option:selected").val());
+            })
+            //selectBox에서 변화가 있을시 선택되어진 태그의 value를 txt_wrap 객체의 background칼러로 적용
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="f_wrap">
+        <dl>
+            <dt>글자크기</dt>
+            <dd class="zoom">
+                <button>+</button>
+                <button>0</button>
+                <button>-</button>
+            </dd>
+            <dt>글자모양</dt>
+            <dd class="f_style">
+                <select name="fs" id="fs">
+                    <option value="black">검정</option>
+                    <option value="blue">파랑</option>
+                    <option value="red">빨강</option>
+                    <option value="yellow">노랑</option>
+                </select>
+            </dd>
+        </dl>
+    </div>
+    <p id="txt_wrap">
+        진경이는 송충이를 먹어야 산다.
+    </p>
+</body>
+
+
+</html>

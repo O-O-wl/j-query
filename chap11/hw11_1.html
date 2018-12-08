@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title> 이벤트 </title>
+<script type="text/javascript">
+///201331024
+//이동영
+//hw11_1
+    window.onload = function() {
+        var hover=false;
+        var clickNum=0;//클릭의 짝수여부 확인을 위해 선언
+        var out=false;  //윈도우에서의 업데이트를 위해 선언
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var btn3 = document.getElementById("btn3");
+
+        var img1 = document.getElementById("img1");
+        var img2 = document.getElementById("img2");
+        var img3 = document.getElementById("img3");
+
+        var onOver=function(e){
+            var event=e||window.event;
+            out=true;
+            img3.src="images/out_btn_out.png"
+            cancelBubble=true;
+            if(event.stopPropagation){
+            event.stopPropagation();
+            }
+           // this.removeEventListener('mouseover',onOver);
+        }
+
+        var onFocus = function(e){
+             var event=e||window.event;
+            out=true;
+            
+            cancelBubble=true;
+            if(event.stopPropagation){
+            event.stopPropagation();
+            }
+            img3.src="images/out_btn_out.png"
+
+            //포커스시 이미지 
+        }
+        var onBlur = function(e){
+             var event=e||window.event;
+            out=true;
+           
+            cancelBubble=true;
+            if(event.stopPropagation){
+            event.stopPropagation();
+            }
+            // 포커스아웃시 이미지
+            img3.src="images/out_btn_on.png"
+        }
+      
+
+        btn1.onclick = function () {
+          //  alert('클릭')
+            clickNum++
+            //클릭횟수 추가후 짝/홀여부로 판정
+            if(clickNum%2==1){
+            img1.src="images/click_btn_on.png"}
+            else{
+            img1.src="images/click_btn_out.png"}
+            
+
+        }
+
+        btn2.onmouseover = function (e) {
+            
+            var event =e||window.event
+            img2.src="images/over_btn_on.png"
+            event.cancelBubble=true;
+            if(event.stopPropagation){
+                event.stopPropagation();
+            }
+
+        }
+        window.onmouseover=function(){
+            img2.src="images/over_btn_out.png"
+            
+            if(out){img3.src="images/out_btn_on.png"}
+            
+        }
+      
+        
+
+        //
+        //
+
+
+        if (window.addEventListener) {
+            btn3.addEventListener('mouseover',onOver)
+            btn3.addEventListener('focus',onFocus)
+            btn3.addEventListener('blur',onBlur)
+            
+
+
+
+
+        } else {
+           btn3.attachEvent('mouseover',onOver)
+            btn3.addEventListener('onfocus',onfocus)
+            btn3.addEventListener('onblur',onBlur)
+
+
+
+
+        }
+
+
+    }
+//]]>
+</script>
+</head>
+<body>
+ <h1>마우스 클릭했을 때 이미지 변경</h1>
+ <p>( images/click_btn_out.png → images/click_btn_on.png )</p>
+ <p><a href="#" id="btn1">
+    <img src="images/click_btn_out.png" id="img1" />
+ </a></p>
+ <h1>마우스 오버했을 때 이미지 변경</h1>
+ <p>( images/over_btn_out.png → images/over_btn_on.png )</p>
+ <p><a href="#" id="btn2">
+    <img src="images/over_btn_out.png" id="img2" />
+ </a></p>
+ <h1>마우스 아웃했을 때 이미지 변경</h1>
+ <p>( images/out_btn_out.png → images/out_btn_on.png )</p>
+ <p><a href="#" id="btn3">
+    <img src="images/out_btn_out.png" id="img3" />
+ </a></p>
+</body>
+</html>

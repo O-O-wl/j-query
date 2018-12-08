@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>hw6_1</title>
+</head>
+
+<body>
+    <script>
+        //  hw6_1
+        //  201331024
+        //  이동영
+        var book={
+            title:"유니티교과서",
+            price:28000,
+            year:2018
+        }
+        //  객체와 속성의 키와 값 지정
+
+        
+        var output=""
+        for(key in book){
+            output+=key+": "+book[key]+"\n"
+        }
+        //book객체에서 각각의 속성을 key에 담아서 반복문 실행
+        // key의 이름과 book객체의 key에 해당하는 속상의 value 를 변수에 저장
+        // 출력
+        alert(output);
+    </script>
+
+
+</body>
+
+</html>

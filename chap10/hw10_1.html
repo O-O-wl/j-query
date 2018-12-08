@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>hw10_1</title>
+</head>
+
+<body>
+    <script>
+        //201331024
+        //hw10_1
+        //이동영
+        
+        Dynamic=function(){
+        alert("car2 동적추가")   
+       //car1 위치를 계산하기위한 변수
+      var count2=0; //car2 위치를  계산하기위한 변수 
+       //car1 의 속도 랜덤 설정
+      var velocity_car2=Math.random();  //car2 의 속도 랜덤 설정
+       //정적으로 생성된 html <img>태그 를 자바 스크립트 car1이라는 변수로 저장 
+      var car2=document.createElement("img")   // 동적으로 노드 앨리먼트 img 태그 생성
+      car2.setAttribute('src',"car2.png")  // 동적생성된 오브젝트에 에트리뷰트 설정 
+      car2.setAttribute('width',"200")
+      car2.setAttribute('height',"100")
+      document.body.appendChild(car2); // 노드에 차일드로 달아줌
+      
+      // 거리를 나타내는 문자열 태그생성 , 에트리뷰트 설정
+      var car2_position=document.createElement("h2")
+      car2_position.setAttribute('align','right');
+      car2_position.setAttribute('style','margin-right:100px')
+      document.body.appendChild(car2_position)
+  
+      car2.style.position='absolute';
+        var car2_move=setInterval(function(){
+        
+        count2+=1;
+        car2.style.left=(count2*velocity_car2)+'px';
+        car2_position.innerHTML='car2 의 위치:<br>'+Math.floor(count2*velocity_car2);
+        if(count2*velocity_car2>=700){
+        car2_position.innerHTML+=" 도착 "
+        clearInterval(car2_move);
+        }},1);
+        
+        
+     }
+     
+    </script>
+    <img src="car1.png" width="200" height="100" id="car1"><br>
+
+    <h2 id="car1_position" align="right" style="margin-right:100px"></h2><br>
+    <script>
+    document.getElementById("car1_position").innerHTML='car1 의 위치:';
+    alert("car1 정적추가")
+    // 시간간격별로 count * velocity 를 곱한 위치로 태그 포지션 갱신.
+    var count1=0;
+    var velocity_car1=Math.random();
+    var car1=document.getElementById("car1");
+    car1.style.position='absolute';
+    var car1_move=setInterval(function(){
+    //함수 실행횟수만큼 카운트증가
+    count1+=1;
+    //카운트 곱하기 랜덤한 속도를 위치로 이동
+    car1.style.left=(count1*velocity_car1)+'px';
+    document.getElementById("car1_position").innerHTML='car1 의 위치:<br>'+Math.floor(count1*velocity_car1);
+    // 현재위치가 700이 되면 멈춤
+    if(count1*velocity_car1>=700){
+    document.getElementById("car1_position").innerHTML+=" 도착 "
+    clearInterval(car1_move);
+    }
+
+
+    },1);
+    
+    setTimeout(Dynamic,500)
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>hw7_1</title>
+</head>
+
+<body>
+    <script>
+        //  hw7_1
+        //  201331024
+        //  이동영
+        function Book(title,price,year,author){
+            this.title=title;
+            this.price=price;
+            this.year=year;
+            this.author=author;
+        }
+        //생성자 함수 작성
+
+
+            var myBook = new Book("java", 10000, 2014, "정우성");
+            var yourBook = new Book("database", 20000, 2013, "장동건");
+            var ourBook = new Book("computer", 30000, 2009, "강동원");
+            //객체 생성자함수를 이용하여 객체생성
+            
+            var books=[myBook,yourBook,ourBook]
+            // 객체를 저장하는 배열선언
+
+            //Book 생성자함수로 만들어진 객체들이 공유할수 있는 프로토타입 메소드 동적으로 추가
+            Book.prototype.toString=function(){
+                var output=""
+                for(var key in this){
+                    // 객체의 속성과 값을 보여준다, 함수타입의 멤버는 제외한체로 보여준다.
+                    if(typeof(this[key])!='function'){
+                       output+=key+"\t:\t"+this[key]+"\n";
+                    }
+                }
+            return output;
+            }
+            
+         //Book 생성자함수로 만들어진 객체들이 공유할수 있는 프로토타입 메소드 동적으로 추가
+         // 해당객체의 년도를 확인후 조건에 맞으면 price의 속성의 값을 바꾸어 준다.
+        Book.prototype.discount=function(){
+            if(this.year==2014){
+                this.price*=0.9;
+            }
+            else if(this.year<2014){
+                this.price*=0.5;
+            }
+
+        }
+            
+
+            // 객체배열에 있는 객체를 하나하나 꺼내서 toString을 이용하여 보여준다.
+            // 이후 해당 객체에 discount메소드 실행후 
+            // 다시 해당객체의 toString 을 이용하여 바뀐 값을 다시 보여준다.
+            for( book in books){
+                alert(books[book].title+"\t할인전")
+                alert(books[book].toString())
+                books[book].discount();
+                alert(books[book].title+"\t할인후")
+                alert(books[book].toString())
+            }
+        
+            
+        
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>hw6_2</title>
+</head>
+
+<body>
+    <script>
+        //  hw6_2
+        //  201331024
+        //  이동영
+        var book = {
+            title: "유니티교과서",
+            price: 28000,
+            year: 2018
+        }
+        //  객체와 속성의 키와 값 지정
+
+        book.author="기타무라 마나미";
+        //  객체 선언후 동적으로 속성과 값 추가
+        
+        var output = ""
+
+        //with키워드를 통해 객체명을 명시하지않고 속성만 쉽게 사용가능하다.
+        with(book){
+
+            output+="title\t:\t "+title+"\n"
+            output+="price\t:\t "+price+"\n"
+            output+="year\t:\t "+year+"\n"
+            output+="author\t:\t"+author+"\n"
+
+        }
+        
+        alert(output);
+    </script>
+
+
+</body>
+
+</html>

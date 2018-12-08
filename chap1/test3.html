@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <script>
+        var front = prompt("주민번호 앞자리를 입력해주세요.");    //ex)990123 6자리
+        var back=prompt("주민번호 뒷자리를 입력해주세요");        //ex)1******* 7자리
+
+
+        day=front%100;           //ex)990123 을 100으로 나눈 나머지 고로 2자리 23
+        front=(front-day)/100;   // (990123-23)/100 = 9901 을 front에 대치
+        month=front%100;         // 9901을 100으로 나눈 나머지 고로 01 나눗셈이므로 int형이라 앞의 0 소실  후 1 반환 
+        front=(front-month)/100;    //9901 -1/100  고로 99 반환후 front에 대치 
+        year=back/1000000>=3?(front>10?"20"+front:"200"+front):"19"+front;     //  뒷자리의 첫째자리 구하기위해
+                                                        // 7자리이므로 7자리수(1000000)로 나눈 나머지 가 3보다크면
+                                                        // 앞에 20 붙임 아니면 19 붙임 
+
+alert(year+"\n"+month+"\n"+day+"\n")
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

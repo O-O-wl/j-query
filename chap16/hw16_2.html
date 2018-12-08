@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+
+    </script>
+    <title> hw16_2 </title>
+    <script type="text/javascript">
+        ///201331024
+        //이동영
+        //hw16_2
+         $(document).ready(function () {
+             var clicked =false;  // 클릭된지 상태를 나타내는 변수 
+               $('#btn1').click(function(){
+                   clicked=clicked?false:true;  //삼항연산자를 통해 클릭여부 변수 지정
+                   if(clicked)  //클릭여부에 따른 src이미지 분기 
+                   $('#img1').attr('src','images/click_btn_on.png')
+                   else{
+                       $('#img1').attr('src','images/click_btn_out.png') 
+                   }
+               })
+               
+            $('#btn2').hover(function(){  // hover 이벤트메소드의 파라미터로 자바스크립트 객체 삽입
+                $('#img2').attr('src','images/over_btn_on.png')   // mouseenter속성:function 지정
+            },function(){
+                $('#img2').attr('src','images/over_btn_out.png') // mouseleave속성:function 지정
+            })
+            
+             $('#btn3').on({ // on메소드의 파라미터로 자바스크립트 객체 삽입
+                 focusout:function(){      // focusout:function 지정
+                $('#img3').attr('src','images/out_btn_on.png')
+                },mouseout:function(){          // blur속성:function 지정
+                $('#img3').attr('src','images/out_btn_on.png') 
+            },
+                mouseover:function(){ 
+                    $('#img3').attr('src','images/out_btn_out.png') }, //마우스 인상태일시 속성지정 
+                focus:function() {
+                    $('#img3').attr('src','images/out_btn_out.png') }    }) // 포커스중일시 속성지정 
+
+        })
+
+    </script>
+</head>
+
+<body>
+    <h1>마우스 클릭했을 때 이미지 변경</h1>
+    <p>( images/click_btn_out.png → images/click_btn_on.png )</p>
+    <p><a href="#" id="btn1">
+            <img src="images/click_btn_out.png" id="img1" />
+        </a></p>
+    <h1>마우스 오버했을 때 이미지 변경</h1>
+    <p>( images/over_btn_out.png → images/over_btn_on.png )</p>
+    <p><a href="#" id="btn2">
+            <img src="images/over_btn_out.png" id="img2" />
+        </a></p>
+    <h1>마우스 아웃했을 때 이미지 변경</h1>
+    <p>( images/out_btn_out.png → images/out_btn_on.png )</p>
+    <p><a href="#" id="btn3">
+            <img src="images/out_btn_out.png" id="img3" />
+        </a></p>
+</body>
+
+</html>

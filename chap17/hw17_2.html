@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>hw17_2</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+<style type="text/css">
+    h1 {
+        width: 50px;
+        height: 30px;
+        background-color: red;
+        font-size: 100%;
+        position: relative;
+    }
+    h2 {
+        width: 50px;
+        height: 30px;
+        background-color: orange;
+        font-size: 100%;
+        position: relative;
+    }
+    h3 {
+        width: 50px;
+        height: 30px;
+        background-color: aqua;
+        font-size: 100%;
+        position: relative;
+    }
+</style>
+<script>
+    //201331024
+    //이동영
+    //hw17_1
+    $('document').ready(function () {
+        $('h1').animate({ 
+            left:'+=250'},5000)  //5초간에 걸쳐 250 이동하게끔 애니메이션 메소드에 설정
+
+        $('h2').animate({
+            left:'+=250',width:'100'},5000) //5초간에 걸쳐 250 이동하고 너비를 100이 되게끔  애니메이션 메소드에 설정
+
+        $('h3').animate({
+                left:'+=250'},3000)         //3초에 걸쳐 250 오른쪽으로 이동하게끔 설정 
+                .animate({left:'-=150'},2000) // 2초간에 걸쳐 150 왼쪽으로 이동하게끔 메소드체이닝을 통해 애니메이션큐 이용
+                }
+
+      
+
+            
+    )
+</script>
+
+</head>
+
+<body>
+    <h1>내용</h1>
+    <h2>내용</h2>
+    <h3>내용</h3>
+</body>
+
+
+</html>
